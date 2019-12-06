@@ -10,7 +10,11 @@
 		<html>
 			<head>
 				<style>
-					h3 {
+					body {
+						padding: 15px;
+					}
+					
+					h2 {
 						text-align: center;
 					}
 					
@@ -23,10 +27,16 @@
 					.container * {
 						flex: 0 0 50%;
 					}
+					
+					@media screen and (max-width: 330px) {
+						.container * {
+							flex: 0 0 100%;
+						}
+					}
 				</style>
 			</head>
 			<body>
-				<h3>ArduAgriSense</h3>
+				<h2>ArduAgriSense</h2>
 				<div class='container'>
 					<p><strong>Time:</strong><br> {{time}}</p>
 					<p><strong>Celcius:</strong><br> {{tempC}}</p>
