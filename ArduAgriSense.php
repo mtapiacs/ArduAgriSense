@@ -39,7 +39,7 @@
 	";
 	
 	$arr_replace = array("{{time}}", "{{tempC}}", "{{tempF}}", "{{humidity}}", "{{hiC}}", "{{hiF}}");
-	$new_values = array('TIME', $_POST["tempC"], $_POST["tempF"], $_POST["humidity"], $_POST["hiC"], $_POST["hiF"]);
+	$new_values = array(time(), $_POST["tempC"], $_POST["tempF"], $_POST["humidity"], $_POST["hiC"], $_POST["hiF"]);
 	
 	$new_dashboard = str_replace($arr_replace, $new_values, $boiler);
 	
