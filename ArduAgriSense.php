@@ -1,15 +1,27 @@
 <?php
-	// $time = time();
-	// $tempF = $_POST["tempC"];
-	// $file = 'dashboard.html';
-	// $data = $time."  -  ".$tempF;
-	// file_put_contents($file, $data);
+	$boiler = 
+	"
+		<html>
+			<body>
+				<h1>Temp {{tempC}}</h1>
+			</body>
+		</html>
+	";
 	
 	$tempC = $_POST["tempC"];
-	$dashboardContents = file_get_contents("dashboard.html");
-	$new_dashboard = str_replace("{{tempC}}", $tempC, $dashboardContents);
+	$new_dashboard = str_replace("{{tempC}}", $tempC, $boiler);
 	
 	file_put_contents("dashboard.html", $new_dashboard);
 	
 	echo "Data Sent!";
 ?>
+
+
+
+<!--
+	// $time = time();
+	// $tempF = $_POST["tempC"];
+	// $file = 'dashboard.html';
+	// $data = $time."  -  ".$tempF;
+	// file_put_contents($file, $data);
+-->
