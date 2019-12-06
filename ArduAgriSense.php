@@ -1,9 +1,10 @@
 <?php
-	// $time = time();
-	// $tempF = $_POST["tempC"];
-	// $file = 'dashboard.html';
-	// $data = $time."  -  ".$tempF;
-	// file_put_contents($file, $data);
+	// https://www.w3schools.com/php/func_string_str_replace.asp
+	// https://www.youtube.com/watch?v=32VcKyI0dio
+	// https://www.elithecomputerguy.com/2019/07/write-post-data-to-server-with-arduino-uno-with-wifi/
+	// https://techtutorialsx.com/2016/07/21/esp8266-post-requests/
+	// https://circuits4you.com/2018/03/10/esp8266-nodemcu-post-request-data-to-website/
+	// 
 	
 	$boiler = 
 	"
@@ -12,6 +13,8 @@
 				<style>
 					body {
 						padding: 15px;
+						max-width: 900px;
+						margin: 0 auto;
 					}
 					
 					h2 {
