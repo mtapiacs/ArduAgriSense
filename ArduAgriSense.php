@@ -17,6 +17,7 @@
 					.container {
 						display: flex;
 						flex-flow: row wrap;
+						text-align: center;
 					}
 					
 					.container * {
@@ -25,14 +26,14 @@
 				</style>
 			</head>
 			<body>
-				<h1>ArduAgriSense</h1>
+				<h3>ArduAgriSense</h3>
 				<div class='container'>
-					<p>Time {{time}}</p>
-					<p>Celcius {{tempC}}</p>
-					<p>Fahrenheit {{tempF}}</p>
-					<p>Humidity {{humidity}}</p>
-					<p>Heat Index C {{hiC}}</p>
-					<p>Heat Index F {{hiF}}</p>
+					<p>Time: {{time}}</p>
+					<p>Celcius: {{tempC}}</p>
+					<p>Fahrenheit: {{tempF}}</p>
+					<p>Humidity: {{humidity}}</p>
+					<p>Heat Index C: {{hiC}}</p>
+					<p>Heat Index F: {{hiF}}</p>
 				</div>
 			</body>
 		</html>
