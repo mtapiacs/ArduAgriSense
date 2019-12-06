@@ -10,7 +10,7 @@
 		<html>
 			<head>
 				<style>
-					h1 {
+					h3 {
 						text-align: center;
 					}
 					
@@ -28,12 +28,12 @@
 			<body>
 				<h3>ArduAgriSense</h3>
 				<div class='container'>
-					<p>Time: {{time}}</p>
-					<p>Celcius: {{tempC}}</p>
-					<p>Fahrenheit: {{tempF}}</p>
-					<p>Humidity: {{humidity}}</p>
-					<p>Heat Index C: {{hiC}}</p>
-					<p>Heat Index F: {{hiF}}</p>
+					<p><strong>Time:</strong><br> {{time}}</p>
+					<p><strong>Celcius:</strong><br> {{tempC}}</p>
+					<p><strong>Fahrenheit:</strong><br> {{tempF}}</p>
+					<p><strong>Humidity:</strong><br> {{humidity}}</p>
+					<p><strong>Heat Index C:</strong><br> {{hiC}}</p>
+					<p><strong>Heat Index F:</strong><br> {{hiF}}</p>
 				</div>
 			</body>
 		</html>
