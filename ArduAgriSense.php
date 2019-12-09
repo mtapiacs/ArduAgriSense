@@ -57,8 +57,10 @@
 		</html>
 	";
 	
+	// Plant Is Good If Not Within Those Degrees
 	$plant_image = "./good.jpg";
 	
+	// If Plant Is In Unfavorable Conditions, Sent Email To Client And Change Display
 	if (!($_POST["tempF"] > 70 && $_POST["tempF"] < 76)) {
 		// Email Client
 		$msg = "Your plants are out of range!";
@@ -70,7 +72,7 @@
 		$plant_image = "./bad.jpg";
 	}
 	
-	// Replace Values With Data From Post
+	// Replace Values With Data From Post And Plant Status
 	$arr_replace = array("{{time}}", "{{tempC}}", "{{tempF}}", "{{humidity}}", "{{hiC}}", "{{hiF}}", "{{img}}");
 	$new_values = array(date("h:i:sa"), $_POST["tempC"], $_POST["tempF"], $_POST["humidity"], $_POST["hiC"], $_POST["hiF"], $plant_image);
 	
