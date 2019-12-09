@@ -1,11 +1,5 @@
 <?php
-	// https://www.w3schools.com/php/func_string_str_replace.asp
-	// https://www.youtube.com/watch?v=32VcKyI0dio
-	// https://www.elithecomputerguy.com/2019/07/write-post-data-to-server-with-arduino-uno-with-wifi/
-	// https://techtutorialsx.com/2016/07/21/esp8266-post-requests/
-	// https://circuits4you.com/2018/03/10/esp8266-nodemcu-post-request-data-to-website/
-	// 
-	
+	// HTML Document Boilerplate
 	$boiler = 
 	"
 		<html>
@@ -19,6 +13,14 @@
 					
 					h2 {
 						text-align: center;
+					}
+					
+					img {
+						width: 100%;
+						max-width: 300px;
+						height: auto;
+						display: block;
+						margin: 0 auto;
 					}
 					
 					.container {
@@ -48,15 +50,31 @@
 					<p><strong>Heat Index C:</strong><br> {{hiC}}</p>
 					<p><strong>Heat Index F:</strong><br> {{hiF}}</p>
 				</div>
+				<img src='{{img}}'>
 			</body>
 		</html>
 	";
 	
-	$arr_replace = array("{{time}}", "{{tempC}}", "{{tempF}}", "{{humidity}}", "{{hiC}}", "{{hiF}}");
-	$new_values = array(time(), $_POST["tempC"], $_POST["tempF"], $_POST["humidity"], $_POST["hiC"], $_POST["hiF"]);
+	$plant_image = "./good.jpg";
+	
+	if (!($_POST["tempF"] > 70 && $_POST["tempF"] < 75)) {
+		// Email Client
+		$msg = "Your plants are out of range!";
+		$headers = 'From: webmaster@example.com' . "\r\n" .
+				   'Reply-To: webmaster@example.com' . "\r\n" .
+				   'X-Mailer: PHP/' . phpversion();
+		mail("mtapiafdez@gmail.com","PLANT CARE", $msg, &headers);
+		
+		$plant_image = "./bad.jpg";
+	}
+	
+	// Replace Values With Data From Post
+	$arr_replace = array("{{time}}", "{{tempC}}", "{{tempF}}", "{{humidity}}", "{{hiC}}", "{{hiF}}", "{{img}}");
+	$new_values = array(time(), $_POST["tempC"], $_POST["tempF"], $_POST["humidity"], $_POST["hiC"], $_POST["hiF"], $plant_image);
 	
 	$new_dashboard = str_replace($arr_replace, $new_values, $boiler);
 	
+	// Add Contents To Dashboard.html
 	file_put_contents("dashboard.html", $new_dashboard);
 	
 	echo "Data Sent!";
