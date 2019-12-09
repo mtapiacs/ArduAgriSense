@@ -4,11 +4,13 @@
 	"
 		<html>
 			<head>
+				<title>ArduAgriSense</title>
 				<style>
 					body {
 						padding: 15px;
 						max-width: 900px;
 						margin: 0 auto;
+						font-family: sans-serif;
 					}
 					
 					h2 {
@@ -57,7 +59,7 @@
 	
 	$plant_image = "./good.jpg";
 	
-	if (!($_POST["tempF"] > 70 && $_POST["tempF"] < 75)) {
+	if (!($_POST["tempF"] > 70 && $_POST["tempF"] < 76)) {
 		// Email Client
 		$msg = "Your plants are out of range!";
 		$headers = 'From: webmaster@example.com' . "\r\n" .
