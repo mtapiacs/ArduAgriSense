@@ -72,7 +72,7 @@
 	
 	// Replace Values With Data From Post
 	$arr_replace = array("{{time}}", "{{tempC}}", "{{tempF}}", "{{humidity}}", "{{hiC}}", "{{hiF}}", "{{img}}");
-	$new_values = array(time(), $_POST["tempC"], $_POST["tempF"], $_POST["humidity"], $_POST["hiC"], $_POST["hiF"], $plant_image);
+	$new_values = array($_SERVER['REQUEST_TIME'], $_POST["tempC"], $_POST["tempF"], $_POST["humidity"], $_POST["hiC"], $_POST["hiF"], $plant_image);
 	
 	$new_dashboard = str_replace($arr_replace, $new_values, $boiler);
 	
