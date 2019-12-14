@@ -67,7 +67,7 @@
 		$headers = 'From: webmaster@example.com' . "\r\n" .
 				   'Reply-To: webmaster@example.com' . "\r\n" .
 				   'X-Mailer: PHP/' . phpversion();
-		mail("mtapiafdez@gmail.com","PLANT CARE", $msg, $headers);
+		mail("email@email.com","PLANT CARE", $msg, $headers);
 		
 		$plant_image = "./bad.jpg";
 	}
